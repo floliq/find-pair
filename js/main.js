@@ -94,6 +94,10 @@
   function createGame() {
     score = 0;
     time = parseInt(inputTime.value);
+    if (time < 30 || time > 180){
+      time = 60
+      inputTime.value = 60;
+    }
     document.querySelector(
       ".game__result"
     ).innerHTML = `Счет: <span class="game__result-score">${score}</span> Время: <span class="game__result-seconds">${time}</span>`;
